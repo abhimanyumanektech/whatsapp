@@ -16,7 +16,9 @@ const AccountProvider = ({ children }) => {
   const socket = useRef();
   
   useEffect(() => {
-    socket.current = io('https://socket-mauve.vercel.app')
+    socket.current = io('https://socket-mauve.vercel.app', {
+      transports: ['websocket']
+    })
   }, [])
 
   return (
